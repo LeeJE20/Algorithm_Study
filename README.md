@@ -9,6 +9,6 @@
 
 * **Commit 규칙** 
 
-      커밋 메세지는 'correct: 문제번호'로 통일해주세요.
+      커밋 메세지는 'correct/wrong: 문제번호'로 통일해주세요.
 
-* **참여자** `HAEM`, `Seniaren`, `Wind`, `hongsh`
+* **참여자** [`HAEM(Haemin-Park)`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_HAEM), [`Wind(KimRiun)`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_KimRiun), [`Seniaren`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_Seniaren), [`hongsh`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_hongsh)
