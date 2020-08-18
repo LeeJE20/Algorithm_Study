@@ -11,4 +11,4 @@
 
       커밋 메세지는 'correct/wrong: 문제번호'로 통일해주세요.
 
-* **참여자** [`Haemin-Park`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_Haemin-Park), [`KimRiun`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_KimRiun), [`Seniaren`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_Seniaren), [`YEJIN-LILY`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_hongsh), [`hsHyeon`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_hongsh)
+* **참여자** [`Haemin-Park`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_Haemin-Park), [`KimRiun`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_KimRiun), [`Seniaren`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_Seniaren), [`YEJIN-LILY`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_YEJIN-LILY), [`hsHyeon`](https://github.com/Haemin-Park/Algorithm_Study/tree/algo_hongsh)
