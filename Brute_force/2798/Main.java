@@ -28,7 +28,7 @@ public class Main {
 		System.out.println(result);
 	}
 
-	public static void blackjack(int a, int b) {
+	public static void blackjack(int start, int d) {
 		//재귀 사용 카드 세 장 뽑기  
 		if(b == 3) {
 			int sum =0;
@@ -41,8 +41,8 @@ public class Main {
 			return;
 		}
 
-		for(int i=a; i<n; i++) {
-			picked[b] = arr[i];
-			blackjack(i+1, b+1);
+		for(int i=start; i<n; i++) {
+			picked[d] = arr[i];
+			blackjack(i+1, d+1);
 		}}
 }
