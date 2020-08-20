@@ -44,6 +44,5 @@ public class Main {
 		for(int i=a; i<n; i++) {
 			picked[b] = arr[i];
 			blackjack(i+1, b+1);
-
 		}}
 }
