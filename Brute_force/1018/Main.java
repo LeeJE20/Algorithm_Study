@@ -6,9 +6,24 @@ import java.util.Scanner;
 
 public class Main {
 	static char[][] arr;
-	static int black = 0;
-	static int white = 0;
 	static int result=100;
+	static char[][] black={{'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'}};
+	
+	static char[][] white={{'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'},
+			       {'W','B','W','B','W','B','W','B'},
+			       {'B','W','B','W','B','W','B','W'}}
 	static int n,m;
 
 	public static void main(String[] args) {
