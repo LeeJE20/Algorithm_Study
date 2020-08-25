@@ -2,33 +2,33 @@
 #include <vector>
 using namespace std;
 int paper[128][128];
-int w = 0,b = 0;
+int w = 0, b = 0;
 
 void findColor(int n, int x, int y) {
 
 	int wc = 0, bc = 0;
-	
+
 	if (n == 1) {
-		if (paper[x][y] == 0)
+		if (paper[y][x] == 0)
 			w++;
 		else
 			b++;
 
 	}
 	else {
-		
+
 		for (int i = y; i < y + n; i++) {
 			for (int j = x; j < x + n; j++) {
-				
-				if (paper[j][i] == 0) {
+
+				if (paper[i][j] == 0) {
 					wc++;
 				}
-				else if (paper[j][i] == 1) {
+				else if (paper[i][j] == 1) {
 					bc++;
 				}
 			}
 		}
-	
+
 		if (wc == n * n) w++;
 		else if (bc == n * n) b++;
 		else {
@@ -48,9 +48,9 @@ int main() {
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
-			
-			cin >> paper[j][i];
-		
+
+			cin >> paper[i][j];
+
 		}
 	}
 
