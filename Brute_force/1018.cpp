@@ -13,9 +13,11 @@ int count(char** b, int color) {
 	// black
 	if (color == 1) { 
 		for (int i = 0; i <= n-8; i++) {
-			for (int j = 0; j <= m-8; j++) {		
+			for (int j = 0; j <= m-8; j++) {	
+				// 8x8씩 이동하며 검사
 				for (int ii = 0; ii < 8; ii++) {
 					for (int jj = 0; jj < 8; jj++) {
+						// (짝수,짝수) 또는 (홀수, 홀수)마다 검은색 패턴 반복
 						if ( ((i+ii)% 2 == 0 && (j+jj)% 2 == 0) || (((i+ii) % 2 == 1 && (j+jj) % 2 == 1)) ) {
 							if (b[i + ii][j + jj] != 'B') count++; // black 검사					
 						}
@@ -40,8 +42,10 @@ int count(char** b, int color) {
 	else { 		
 		for (int i = 0; i <= n - 8; i++) {
 			for (int j = 0; j <= m - 8; j++) {
+				// 8x8씩 이동하며 검사
 				for (int ii = 0; ii < 8; ii++) {
 					for (int jj = 0; jj < 8; jj++) {
+						// (짝수,짝수) 또는 (홀수, 홀수)마다 흰색 패턴 반복
 						if (((i + ii) % 2 == 0 && (j + jj) % 2 == 0) || (((i + ii) % 2 == 1 && (j + jj) % 2 == 1))) {
 							if (b[i + ii][j + jj] != 'W')	count++; // white 검사					
 						}
