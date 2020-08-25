@@ -98,4 +98,5 @@ int main() {
 		cout << black;
 
 	return 0;
+	
 }
