@@ -1,6 +1,5 @@
 // 체스판 다시 칠하기
 #include <iostream>
-#include <stdio.h>
 using namespace std;
 
 int n, m; // 체스판 크기
