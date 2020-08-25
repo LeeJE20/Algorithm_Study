@@ -9,11 +9,11 @@ bool allColorSame(int n, int x, int y) {
 
 	char first;
 
-	first = qt[x][y];
+	first = qt[y][x];
 
 	for (int i = y; i < y + n; i++) {
 		for (int j = x; j < x + n; j++) {
-			if (qt[x][y] != qt[j][i])
+			if (qt[y][x] != qt[i][j])
 				return false;
 		}
 	}
@@ -22,15 +22,15 @@ bool allColorSame(int n, int x, int y) {
 }
 
 void quardTree(int n, int x, int y) {
-	
+
 	if (n == 1) {
-		
-		str.push_back(qt[x][y]);
+
+		str.push_back(qt[y][x]);
 		return;
 	}
 	else if (allColorSame(n, x, y)) {
-		
-		str.push_back(qt[x][y]);
+
+		str.push_back(qt[y][x]);
 		return;
 	}
 	else {
@@ -46,13 +46,13 @@ void quardTree(int n, int x, int y) {
 int main() {
 
 	int n;
-	
+
 	cin >> n;
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 
-			cin >> qt[j][i];
+			cin >> qt[i][j];
 
 		}
 	}
