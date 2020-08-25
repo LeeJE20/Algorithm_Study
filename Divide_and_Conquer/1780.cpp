@@ -1,13 +1,13 @@
 #include<iostream>
 using namespace std;
 int p[2187][2187];
-int mo=0, z=0, o=0;
+int mo = 0, z = 0, o = 0;
 
 bool isSame(int n, int x, int y) {
 
 	for (int i = y; i < y + n; i++) {
 		for (int j = x; j < x + n; j++) {
-			if (p[x][y] != p[j][i])
+			if (p[y][x] != p[i][j])
 				return false;
 		}
 	}
@@ -19,11 +19,11 @@ bool isSame(int n, int x, int y) {
 void paper(int n, int x, int y) {
 
 	if (n == 1 || isSame(n, x, y)) {
-		if (p[x][y] == -1)
+		if (p[y][x] == -1)
 			mo++;
-		else if (p[x][y] == 0)
+		else if (p[y][x] == 0)
 			z++;
-		else if (p[x][y] == 1)
+		else if (p[y][x] == 1)
 			o++;
 	}
 	else {
@@ -46,12 +46,12 @@ int main() {
 	cin >> n;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
-			cin >> p[j][i];
+			cin >> p[i][j];
 		}
 	}
 
 	paper(n, 0, 0);
 
-	cout << mo << endl << z <<endl<< o;
+	cout << mo << endl << z << endl << o;
 
 }
