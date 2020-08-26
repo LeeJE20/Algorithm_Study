@@ -5,29 +5,27 @@
 #include <stdio.h>
 using namespace std;
 
-int n, s;
-int seq[20];
-int result = 0;
+int n, s; // n: 정수 개수, s: 합
+int seq[20]; // 수열
+int result = 0; // 개수
 
 void PartialSum(int idx, int sum) {
 	//printf("PartialSum(%d, %d)  ", idx, sum);
 	
-	if (idx == n) {
-		
-		return;
-	}
-
+	// 마지막 원소를 벗어나면 return
+	if (idx == n) return;
+	
+	
+	// 해당 원소를 누적해서 더함
 	sum = seq[idx] + sum;
-	
 
-
-	if (sum == s) {
-		result++;
+	// 더한 합이 s와 같으면 result 증가
+	if (sum == s) result++;
 		
-	}
-	
+	// recursion
+	// 해당 원소를 빼고 부분합을 구할 경우
 	PartialSum(idx + 1, sum - seq[idx]);
-	
+	// 해당 원소를 포함해서 부분합을 구할 경우
 	PartialSum(idx + 1, sum);
 	
 }
@@ -45,8 +43,8 @@ int main() {
 	PartialSum(0, 0);
 
 	
-
 	// 합이 S가 되는 부분수열의 개수를 출력한다
 	cout << result;
+	
 	return 0;
 }
