@@ -5,6 +5,7 @@
 using namespace std;
 
 vector<int> Sum;
+int n, m;
 
 void printPicked(vector<int>& picked, int cards[]) {
 	int sum = 0;
@@ -36,8 +37,7 @@ void pick(int n, vector<int>& picked, int toPick, int cards[]) {
 int main(void) {
 	// N, M 입력
 	// N: 카드의 개수(3 <=N<= 100), M: 3장 카드 최대 합(10 <= M <=300000)
-	int n = 5;
-	int m = 21;
+	cin >> n >> m;
 
 	// 카드 5개 입력
 	int cards[5] = { 1, 2, 3, 4, 5 };
