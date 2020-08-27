@@ -4,14 +4,70 @@
 
 
 #include<iostream>
+#include<vector>
 #include<stdio.h>
 using namespace std;
 
-#define DNUM 1000000007
-// #define DNUM 10 //테스트용
+// long long DNUM=1000000007;
+
+#define DNUM 10 //테스트용
+long long a;
+
+long long cT[4000001] = {1}; // 캐시테이블
 
 
-int cT[2000001] = {1}; // 캐시테이블
+// 팩토리얼 캐시테이블
+void fillCacheTable(int n)
+{
+	long long result = 1;
+	for (int i = 2; i < n+1; i++)
+	{
+		result *= (long long) i;
+		result %= DNUM;
+		cT[i] = result;
+		// printf("[%d] = %lld \n", i, result);
+	}
+}
+
+// 모듈연산된 팩토리얼
+long long facMod(int n)
+{
+	long long result = cT[n];
+	return result;
+}
+
+vector<int> binary;
+long long pow(long long n)
+{
+	// int a;
+	// int b;
+	
+	// printf("ppower\n");
+	int P= (int)DNUM;
+	while ( P >= 1)
+	{
+		binary.push_back(P%2);
+		P =  (int)(P/2);
+		// printf("%3d ", binary.back());
+	}
+	
+	long long result = 1;
+	
+
+	for (long long i = 0; i <binary.size(); i++)
+	{
+		n = n << 1;
+		if (binary[i] == 1)
+		{
+			result = ((n%DNUM)*result)%DNUM;
+		}
+		// printf("\n i: %3lld, n = %3lld, result = %3lld ", i, n, result);
+	}
+	// cout<<endl<<endl;
+	return result;
+}
+
+
 
 int com(int n, int k)
 {
@@ -23,60 +79,17 @@ int com(int n, int k)
 	
 	if (k == 1) return n;
 	
-	// cout<<"k = "<<k<<endl;
-	// 하나 작게 구함. 마지막줄은 다른 루프..
-	for (int i = 3; i < n ; i++)
-	{
-		// printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~i = %3d   \n", i);
-		int tmp1 = -1;
-		int tmp2 = -1;
-		// printf("(int)(i/2 +1) = %d\n", (int)(i/2 +1));
-		
-		
-		
-		
-		
-		for (int j = 1; (j<(int)(i/2 +1)) && (j < k+1) ; j++)
-		// for (int j = 1; (j<(int)(i/2 +1)) ; j++)
-		{
-			
-			if (j == 1) 
-			{
-				tmp1 = 1;
-				tmp2 = cT[j];
-				cT[j] = i;
-				// printf("j == 1일때 %3d \n", cT[j]);
-
-			}
-			else if ((i %2 == 0) && (j == (i/2))) // 배열 칸 수 늘어나는 부분
-			{
-				cT[j] = tmp2+tmp2;
-				// printf("j = %3d 일때 배열 칸 수 늘어나서 %3d \n",j,  cT[j]);
-			}
-			else
-			{
-				tmp1 = tmp2;
-				tmp2 = cT[j];
-				cT[j] = tmp1 + tmp2;
-				
-				// printf("j = %3d 일때 평범하게 %3d \n",j,  cT[j]);
-			}
-			
-			
-			if (cT[j] >= DNUM) cT[j] -=DNUM; // DNUM 넘지 않게
-			// printf("DNUM 조정하여 cT[%d] = %3d \n\n", j, cT[j]);
-		}
-	}
+	long long A;
+	long long B;
+	A = cT[n];
+	B =( (cT[k]%DNUM) * (cT[n-k]%DNUM) ) %DNUM;
+	// printf("A, B = %lld, %lld\n", A, B);
 	
-	int result = -1;
-	// printf("cT[%d], cT[%d]= %3d, %3d\n",k-1, k, cT[k-1], cT[k] );
-	if (  (n %2 == 0) && (k == (n/2))    )
-		result = cT[k-1]+ cT[k-1];
-	else
-		result = cT[k-1]+ cT[k];
-		
-	// printf("result : %3d \n\n", result);
-	if (result >= DNUM) result -= DNUM; 
+	B = pow(B);
+	
+	long long result = (A*B)%DNUM;
+	
+	// if (result >= DNUM) result -= DNUM; 
 	
 	return result;
 }
@@ -92,7 +105,12 @@ int main()
 	
 	cin >> n >> k;
 	
+	fillCacheTable(n);
+	
+	
 	int result = com(n, k);
 	
+	
+	// cout<<endl<<"결과: ";
 	cout<< result;
 }
