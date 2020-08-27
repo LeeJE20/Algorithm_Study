@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-#define DevidingNum 1000000007 // 1000000007
+#define DevidingNum 1000000007 
 
 int n, k;
 unsigned long long nCk, N_K, K; // nCk, n!/(n-k+1)!, k!
