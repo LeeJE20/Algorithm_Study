@@ -23,19 +23,19 @@ public class  Main
 				arr[i] = sc.nextInt();
 		}
 		
-		Solve(0,0);
+		Solve(0,0,0);
 
 		System.out.println(result);
 	}
 
 	
-	public static void Solve(int num,int sum){
+	public static void Solve(int num,int sum, int length){
 		if(num>=N) return; 
 		sum=sum+arr[num];
-		if(sum==S)result++;
+		if(sum==S&& length>0)result++;
 
-		Solve(num+1,sum);
-		Solve(num+1,sum-arr[num]);
+		Solve(num+1,sum,length+1);
+		Solve(num+1,sum-arr[num],length);
 	}
 	
 }
