@@ -28,9 +28,9 @@ void bino_coef(int n, int k) {
 
   
 	if (n == 0 || k == 0) {
-    cout << "1";
-    return; 
-   }
+  	  cout << "1";
+   	  return; 
+ 	}
   
   
   
@@ -41,12 +41,12 @@ void bino_coef(int n, int k) {
 	// k! 
 	for (int i = 2; i <= k; i++) {
 		result = result * i;
-  }
+  	}
 	K = result;
   
 	
 	// nx(n-1)x...x(n-k+1) 
-  result = 1;
+  	result = 1;
 	for (int i = n - k + 1; i <= n; i++) {
 		result = result * i; /* ERROR: N_K를 계산 과정에서 overflow가 일어나 정확한 값 도출되지 않음 -> 페르마 소정리 공부하기*/
 	}
@@ -60,6 +60,9 @@ void bino_coef(int n, int k) {
 	
 	
 }
+
+
+
 
 int main() {
 	
