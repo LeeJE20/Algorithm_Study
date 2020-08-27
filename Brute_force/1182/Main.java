@@ -8,13 +8,14 @@ public class  Main
 {
 	static int[] arr;
 	static int result;
+	static int N,S=0;
 
 	public static void main(String[] args) 
 	{
 		Scanner sc=new Scanner(System.in);
 
-		int N=sc.nextInt();
-		int S=sc.nextInt();
+		N=sc.nextInt();
+		S=sc.nextInt();
 		
 		arr = new int[N];
 		
@@ -22,24 +23,19 @@ public class  Main
 				arr[i] = sc.nextInt();
 		}
 		
-		Solve(0);
+		Solve(0,0);
 
 		System.out.println(result);
 	}
 
 	
-	public static void Solve(int num){
-		int sum=0;
+	public static void Solve(int num,int sum){
 		if(num>=N) return; 
+		sum=sum+arr[num];
+		if(sum==S)result++;
 
-		for(int i=0;i<N;i++){
-			for(int j=0;j<N;j++){
-				sum=sum+arr[i];
-				if(sum=S) result++;
-			}}
-
-		solve(num+1);
+		Solve(num+1,sum);
+		Solve(num+1,sum-arr[num]);
 	}
 	
 }
-
