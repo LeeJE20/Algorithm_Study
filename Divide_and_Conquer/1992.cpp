@@ -32,7 +32,7 @@ void compress(int y, int x, int size) {
 				compress(y + half, x + half, half); // 오른쪽아래
 				cout << ")";
 
-				/* return 없으면 한 번 1/4하면서 재귀했는데 이후에 (y,x)와 색이 다른 칸에서 또다시 같은 재귀를 반복함. */
+				/* NOTE! return 없으면 한 번 1/4하면서 재귀했는데 이후에 (y,x)와 색이 다른 칸에서 또다시 같은 재귀를 반복함. */
 				return; 
 			}
 			
