@@ -52,7 +52,7 @@ int main() {
 	// n, r, c 입력
 	cin >> n >> r >> c;
 
-	// 2의 거듭제곱 계산
+	// 2의 거듭제곱 계산: 2^n
 	int size = 1;
 	for (int i = 0; i < n; i++) {
 		size *= 2;
