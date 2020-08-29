@@ -20,11 +20,11 @@ int min(int a, int b) {
 // 규칙에 따라 색을 칠할 경우 최소 비용 구하는 함수
 void minCost() {
 	
-	// cache 첫번째 행 초기화
+	// cache 첫번째 행을 house의 첫번째 행으로 초기화
 	for (int i = 0; i < 3; i++)
 		cache[0][i] = house[0][i];
 
-	// 최단 경로
+	// Memorization 으로 누적 비용 구하기
 	for (int i = 1; i < n; i++) {
 		for (int j = 0; j < 3; j++) {
 
