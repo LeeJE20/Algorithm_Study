@@ -16,6 +16,7 @@ void QuadTree_Z(int y, int x, int size) {
 
 	/* (y, x)를 시작점으로 size x size 크기의 2차원 배열을 4등분으로 나누었을 때, 
 	(r, c)가 속하는 사분면을 다시 4등분하며 재귀적으로 반복한다.
+	모든 사분면을 다 탐색하지 않고 오직 (r, c)가 속하는 사분면만 탐색하므로써 비용을 줄일 수 있다.
 	예를 들어, 오른쪽 아래에 속하면 오른쪽 아래를 다시 4등분하고 시작점은 오른쪽 아래 첫 좌표이다.*/
 	
 	if (y == r && x == c) { // 기저 사례
@@ -29,15 +30,15 @@ void QuadTree_Z(int y, int x, int size) {
 			QuadTree_Z(y, x, half); 
 		}
 		else if (r < y + half && c >= x + half) { //오른쪽위
-			Count += half * half;
+			Count += half * half; // 왼쪽위 칸 개수 더함
 			QuadTree_Z(y, x + half, half); 
 		}
 		else if (r >= y + half && c < x + half) { //왼쪽아래
-			Count += half * half * 2;
+			Count += half * half * 2; // 왼쪽위 와 오른쪽위 칸 개수 더함
 			QuadTree_Z(y + half, x, half); 
 		}
 		else if (r >= y + half && c >= x + half) { //오른쪽아래
-			Count += half * half * 3;
+			Count += half * half * 3; // 왼쪽위, 오른쪽위, 왼쪽아래 칸 개수 더함
 			QuadTree_Z(y + half, x + half, half);
 		}
 	}
