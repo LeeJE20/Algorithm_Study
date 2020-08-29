@@ -25,7 +25,7 @@ void QuadTree_Z(int y, int x, int size) {
 	}
 	else {
 		int half = size / 2;
-		int quarter = half * half; // 4등분된 조각 1개의 크기
+		int quarter = half * half; // 4등분된 조각 하나의 크기
 			
 		if (r < y + half && c < x + half) { // 왼쪽위
 			QuadTree_Z(y, x, half); 
