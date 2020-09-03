@@ -1,12 +1,12 @@
 // 포도주 시식
+// 3잔을 연속으로 마시지 않으면서 최대로 마실 수 있는 포도주의 양 구하기
 // 동적계획법1 https://www.acmicpc.net/problem/2156
-/* 조약돌 놓기 문제 응용
-*/
+
 #include <iostream>
 using namespace std;
 
 
-int n; // 포도주 잔 개수
+int n; // 포도주 잔 개수. 1<= n <=10000
 int glass[10001]; // 포도주 양
 int cache[10001]; // 누적값
 
@@ -44,11 +44,12 @@ void maxWine() {
 
 	if (n > 1) {
 		cache[2] = glass[1] + glass[2];
-
+		
 		for (int i = 3; i <= n; i++) {
+			/* 3가지 중 최대값 구하기 */
 			cache[i] = max(cache[i - 2] + glass[i], cache[i - 3] + glass[i - 1] + glass[i], cache[i - 1]);
 			
-		}
+		}/*i-3까지 인덱스를 고려해야 하므로 i=3부터 시작하도록 한다.*/
 	}
 
 	cout << cache[n];
@@ -63,12 +64,9 @@ int main() {
 		cin >> glass[i];
 
 	
-
 	// 규칙에 따라 최대로 마실 수 있는 포도주 양 출력
 	maxWine(); 
 	
 	
-
-
 	return 0;
 }
