@@ -1,6 +1,7 @@
 // 2020.08.26 시작
 // https://www.acmicpc.net/problem/1182
 // 2020.08.26 끝
+// correct: 1182
 
 #include<iostream>
 #include<vector>
