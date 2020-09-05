@@ -1,7 +1,7 @@
 // 2020-08-26 22:50 시작
 // https://www.acmicpc.net/problem/11401
 // 이항 계수 3 
-
+// wrong: 11401
 
 #include<iostream>
 #include<vector>
