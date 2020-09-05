@@ -1,7 +1,7 @@
 // 2020.08.20 시작
 // https://www.acmicpc.net/problem/1018
 // 2020.08.25 끝
-
+// correct: 1018
 
 #include<iostream>
 #include<climits>
