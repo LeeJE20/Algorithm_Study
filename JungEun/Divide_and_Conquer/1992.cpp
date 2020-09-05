@@ -2,6 +2,7 @@
 // https://www.acmicpc.net/problem/1992
 // 이정은 작성
 // 2020.08.26 21:26 종료
+// correct: 1992
 
 #include<iostream>
 #include<vector>

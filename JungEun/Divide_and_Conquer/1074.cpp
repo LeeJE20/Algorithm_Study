@@ -1,6 +1,8 @@
 // 2020-08-27 23:48 시작
 // https://www.acmicpc.net/problem/1074
 // 2020-08-28 02:07 종료
+// correct: 1074
+
 #include<iostream>
 #include<stdio.h>
 using namespace std;

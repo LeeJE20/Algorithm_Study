@@ -1,7 +1,7 @@
 // 2020-09-01 12:24 시작
 // https://www.acmicpc.net/problem/2156
 // 포도주 시식
-// 
+// wrong: 2156 
 
 /*
 감상평: 
