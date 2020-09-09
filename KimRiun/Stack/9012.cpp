@@ -67,6 +67,5 @@ int main() {
 	checkVPS();
 	
 
-
 	return 0;
 }
